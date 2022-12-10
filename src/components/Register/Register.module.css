@@ -1,0 +1,84 @@
+.register_body{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, rgba(58, 96, 231, 0) 0%, #3A60E7 100%);
+}
+
+.register_wrap{
+    display: flex;
+    padding-top: 10%;
+}
+.form{
+    margin-left: 80px;
+    width: 450px;
+}
+.girl_img{
+    margin-left: 80px;
+    width: 600px;
+}
+.logo_title{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 96px;
+    letter-spacing: 0.12em;
+    color: #000000;
+    margin-left: 50px;
+}
+.sign_up_btn{
+    width: 450px;
+    height: 80px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    border: 3px solid #FFFFFF;
+    border-radius: 10px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    /* or 100% */
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #2148C0;
+    cursor: pointer;
+}
+
+.user_name_input,
+.email_input,
+.password_input{
+    box-sizing: border-box;
+    width: 450px;
+    height: 80px;
+
+    border: 3px solid #FFFFFF;
+    border-radius: 10px;
+    background: transparent;
+    margin-bottom: 25px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+
+    text-align: center;
+    color: #FFFFFF;
+}
+.email_input::placeholder,
+.user_name_input::placeholder,
+.password_input::placeholder
+{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+
+    text-align: center;
+    color: #FFFFFF;
+
+}
