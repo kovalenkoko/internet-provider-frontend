@@ -1,0 +1,86 @@
+.account_body{
+    background: linear-gradient(180deg, rgba(217, 58, 231, 0) 0%, #E7633A 100%);
+}
+.acc_data{
+    width: 90%;
+    margin: 56px auto 0;
+}
+.set_btns_wrapper{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 27px auto 0;
+}
+.acc_data_label{
+    width: 260px;
+    margin:0 auto;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
+    color: #000000;
+
+}
+.change_tariff_btn{
+    width: 500px;
+    height: 80px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.deposit_btn{
+    width: 500px;
+    height: 80px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.info_btns{
+    display: block;
+    width: fit-content;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 48px;
+    color: #000000;
+    margin: 15px auto auto;
+
+}
+.current_plan_wrapper{
+    height: 80px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin-top: 27px;
+    display: flex;
+}
+.mobile_img{
+    height: 50px;
+    width: 50px;
+    margin: auto 30px auto 30px;
+}
+.curr_plan_label{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 48px;
+    margin: auto 30px auto 0;
+    color: #000000;
+}
+.tariff_div{
+    width: 350px;
+    height: 50px;
+    background: #FFFFFF;
+    border: 3px solid #000000;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 39px;
+    margin: auto 0;
+    color: #000000;
+}

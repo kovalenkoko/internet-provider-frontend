@@ -1,0 +1,103 @@
+.header{
+    width: 98%;
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo_title{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 75px;
+
+    letter-spacing: 0.12em;
+
+    color: #000000;
+
+}
+.navbar{
+    font-family: 'Noto Sans';
+    width: 45%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 57px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    color: #000000;
+    margin: auto 0;
+
+}
+.label_wrapper{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.promotions_label{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 57px;
+    cursor: pointer;
+    color: #000000;
+}
+.promotions_label_active{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 57px;
+    cursor: pointer;
+    color: #000000;
+}
+.tariff_label{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 57px;
+    cursor: pointer;
+
+    color: #000000;
+}
+.tariff_label_active{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 57px;
+    cursor: pointer;
+    color: #000000;
+}
+.user_info{
+    width: 22%;
+    height: 80%;
+    display: flex;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: auto 0;
+}
+.user_info_wrapper{
+    display: flex;
+    margin: auto auto;
+}
+.username{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+    margin: auto 0 auto 10px;
+}
+.user_image{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
