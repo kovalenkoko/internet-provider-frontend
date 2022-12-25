@@ -4,6 +4,7 @@ import Promotions from "./components/Promotions/Promotions";
 import Tariff from "./components/Tariff/Tariff";
 import Account from "./components/Account/Account";
 import Deposit from "./components/Deposit/Deposit";
+import AdminPanel from "./components/AdminPanel/AdminPanel";
 
 export const ROUTES = [
     {
@@ -32,7 +33,7 @@ export const ROUTES = [
     },
     {
         path: '/admin-panel',
-        element: <div>The route is coming soon</div>,
+        element: <AdminPanel/>,
     },
     {
         path: '/user-list',

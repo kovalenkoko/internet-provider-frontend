@@ -18,6 +18,9 @@ const Account = () => {
     const [phoneNumber, setPhoneNumber] = useState("")
     const [tariff, setTariff] = useState("")
 
+    const dataFromStorage = JSON.parse(localStorage.getItem("data"))
+    const isAdmin = dataFromStorage.user.roles.length === 2
+
 
 
     const changeTariffHandler = () => {
@@ -30,6 +33,9 @@ const Account = () => {
     const logOutHandler = () => {
         localStorage.removeItem('data')
         navigate("/auth")
+    }
+    const onAdminPanelHandler = () =>{
+        navigate("/admin-panel")
     }
     useEffect(() => {
         const requestOptions = {
@@ -133,6 +139,7 @@ const Account = () => {
                         </div>
                         <div className={styles.btns_wrapper}>
                             <button className={styles.save_btn} onClick={onSaveHandler}>Save</button>
+                            {isAdmin ? <button className={styles.admin_panel_btn} onClick={onAdminPanelHandler} >Admin panel</button> : <></> }
                             <button className={styles.log_out_btn} onClick={logOutHandler}>Log out</button>
                         </div>
                     </div>

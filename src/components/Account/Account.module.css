@@ -127,6 +127,7 @@
     justify-content: space-between;
 }
 .save_btn,
+.admin_panel_btn,
 .log_out_btn{
     width: fit-content;
     height: 50px;
