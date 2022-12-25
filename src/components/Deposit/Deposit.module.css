@@ -2,6 +2,7 @@
     background: linear-gradient(180deg, rgba(231, 58, 58, 0) 0%, #617FE8 100%);
 }
 .deposit_data{
+    height: 400px;
     width: 90%;
     margin: 56px auto 0;
 }
@@ -16,34 +17,7 @@
     color: #000000;
 }
 .deposit_form_wrapper{
-    display: flex;
-}
-.card_form{
-    width: 580px;
-    height: 380px;
-    background: rgba(255, 255, 255, 0.75);
-    border-radius: 20px;
-}
-.card_form_data{
     width: fit-content;
-    padding: 120px;
+    display: flex;
     margin: 0 auto;
-}
-.month_input,
-.year_input,
-.cvv_input{
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.75);
-    border: 2px solid #000000;
-    border-radius: 10px;
-}
-.month_input::-webkit-outer-spin-button,
-.month_input::-webkit-inner-spin-button,
-.year_input::-webkit-outer-spin-button,
-.year_input::-webkit-inner-spin-button,
-.cvv_input::-webkit-outer-spin-button,
-.cvv_input::-webkit-inner-spin-button{
-    -webkit-appearance: none;
-    margin: 0;
 }

@@ -2,5 +2,15 @@
     background: linear-gradient(180deg, rgba(217, 58, 231, 0) 0%, #E7633A 100%);
 }
 .content{
+    width: 1000px;
     height: 500px;
+    margin: 0 auto;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+}
+.tariffs_info{
+    display: flex;
+    justify-content: space-between;
 }

@@ -27,9 +27,19 @@ const Promotions = () => {
         <div className={styles.promotions_body}>
             <Header/>
             <div className={styles.content}>
+                <div className={styles.head}>
+                    <label>Name</label>
+                    <label>Discount</label>
+                    <label>Duration</label>
+                </div>
                 {promotions.map((item) => (
-                    <div>{JSON.stringify(item)}</div>
+                    <div className={styles.promotions_info}>
+                        <label>{item.name}</label>
+                        <label>{item.discount}</label>
+                        <label>{item.duration}</label>
+                    </div>
                 ))}
+
             </div>
             <Footer/>
         </div>
