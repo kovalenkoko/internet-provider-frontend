@@ -1,0 +1,8 @@
+.user_list_body{
+    background: linear-gradient(180deg, rgba(231, 58, 58, 0) 0%, #617FE8 100%);
+}
+.user_list_data{
+    height: 400px;
+    width: 90%;
+    margin: 56px auto 0;
+}
