@@ -6,11 +6,16 @@ import Account from "./components/Account/Account";
 import Deposit from "./components/Deposit/Deposit";
 import AdminPanel from "./components/AdminPanel/AdminPanel";
 import UserList from "./components/UserList/UserList";
+import EditProms from "./components/EditProms/EditProms";
+import AddProm from "./components/AddProm/AddProm";
+import EditTariffs from "./components/EditTariffs/EditTariffs";
+import AddTariff from "./components/AddTariff/AddTariff";
+import Start from "./Start";
 
 export const ROUTES = [
     {
         path: '/',
-        element: <div>Start page</div>,
+        element: <Start/>,
     },
     {
         path: '/auth',
@@ -42,11 +47,19 @@ export const ROUTES = [
     },
     {
         path: '/edit-promotions',
-        element: <div>The route is coming soon</div>,
+        element: <EditProms/>,
+    },
+    {
+        path: '/add-promotion',
+        element: <AddProm/>,
     },
     {
         path: '/edit-tariff-plans',
-        element: <div>The route is coming soon</div>,
+        element: <EditTariffs/>,
+    },
+    {
+        path: '/add-tariff',
+        element: <AddTariff/>,
     },
     {
         path: '/deposit',

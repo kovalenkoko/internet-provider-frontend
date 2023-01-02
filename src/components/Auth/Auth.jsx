@@ -12,6 +12,7 @@ const Auth = () => {
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
 
+
     const {data, toggleData} = useContext(UserContext)
 
     const signUpHandler = () => {
