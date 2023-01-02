@@ -12,6 +12,8 @@ const AddProm = () => {
     const [duration, setDuration] = useState("")
     const navigate = useNavigate()
     const {data, toggleData} = useContext(UserContext)
+    const dataFromStorage = JSON.parse(localStorage.getItem("data"))
+    const isAdmin = dataFromStorage.user.roles.length === 2
 
     const onSavePromHandler = () => {
         const requestOptions = {
@@ -31,22 +33,24 @@ const AddProm = () => {
         <div className={styles.promotions_body}>
             <Header/>
             <div className={styles.content}>
-                <h3>Add a new Promotion</h3>
-                <div>
+                {isAdmin ? (<>
+                    <h3>Add a new Promotion</h3>
                     <div>
-                        <label>Name</label>
-                        <input type={"text"} placeholder={"NAME"} onChange={e => setName(e.target.value)} value={name}/>
+                        <div>
+                            <label>Name</label>
+                            <input type={"text"} placeholder={"NAME"} onChange={e => setName(e.target.value)} value={name}/>
+                        </div>
+                        <div>
+                            <label>Discount</label>
+                            <input  placeholder={"DISCOUNT"} onChange={e => setDiscount(e.target.value)}  value={discount}/>
+                        </div>
+                        <div>
+                            <label>Duration</label>
+                            <input placeholder={"DURATION"} onChange={e => setDuration(e.target.value)}  value={duration}/>
+                        </div>
                     </div>
-                    <div>
-                        <label>Discount</label>
-                        <input  placeholder={"DISCOUNT"} onChange={e => setDiscount(e.target.value)}  value={discount}/>
-                    </div>
-                    <div>
-                        <label>Duration</label>
-                        <input placeholder={"DURATION"} onChange={e => setDuration(e.target.value)}  value={duration}/>
-                    </div>
-                </div>
-                <button onClick={onSavePromHandler}>Save</button>
+                    <button onClick={onSavePromHandler}>Save</button>
+                </>) : (<div>You have no rights</div>)}
             </div>
             <Footer/>
         </div>

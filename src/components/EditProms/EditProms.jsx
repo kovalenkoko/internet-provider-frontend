@@ -10,6 +10,8 @@ const EditProms = () => {
     const [promotions, setPromotions] = useState([])
     const {data, toggleData} = useContext(UserContext)
     const navigate = useNavigate()
+    const dataFromStorage = JSON.parse(localStorage.getItem("data"))
+    const isAdmin = dataFromStorage.user.roles.length === 2
 
     const addPromHandler = () => {
         navigate("/add-promotion")
@@ -43,23 +45,25 @@ const EditProms = () => {
         <div className={styles.promotions_body}>
             <Header/>
             <div className={styles.content}>
-                <button onClick={addPromHandler}>Add new promotion</button>
-                <div className={styles.head}>
-                    <label>Name</label>
-                    <label>Discount</label>
-                    <label>Duration</label>
-                </div>
-                {promotions.map((item) => (
-                    <div className={styles.tariffs_info}>
-                        <label>{item.name}</label>
-                        <label>{item.discount}</label>
-                        <label>{item.duration}</label>
-                        <div>
-                            <button>Edit</button>
-                            <button id={item.id} onClick={onDeletePromHandler}>Delete</button>
-                        </div>
+                {isAdmin ? (<>
+                    <button onClick={addPromHandler}>Add new promotion</button>
+                    <div className={styles.head}>
+                        <label>Name</label>
+                        <label>Discount</label>
+                        <label>Duration</label>
                     </div>
-                ))}
+                    {promotions.map((item) => (
+                        <div className={styles.tariffs_info}>
+                            <label>{item.name}</label>
+                            <label>{item.discount}</label>
+                            <label>{item.duration}</label>
+                            <div>
+                                <button>Edit</button>
+                                <button id={item.id} onClick={onDeletePromHandler}>Delete</button>
+                            </div>
+                        </div>
+                    ))}
+                </>) : (<div>You have no rights</div>)}
             </div>
             <Footer/>
         </div>

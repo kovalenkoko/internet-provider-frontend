@@ -10,6 +10,8 @@ const EditTariffs = () => {
     const [tariffs, setTariffs] = useState([])
     const {data, toggleData} = useContext(UserContext)
     const navigate = useNavigate()
+    const dataFromStorage = JSON.parse(localStorage.getItem("data"))
+    const isAdmin = dataFromStorage.user.roles.length === 2
 
     const addTariffHandler = () => {
         navigate("/add-tariff")
@@ -43,25 +45,27 @@ const EditTariffs = () => {
         <div className={styles.tariffs_body}>
             <Header/>
             <div className={styles.content}>
-                <button onClick={addTariffHandler}>Add new tariff</button>
-                <div className={styles.head}>
-                    <label>Name</label>
-                    <label>Price</label>
-                    <label>Bandwidth</label>
-                    <label>Bonus</label>
-                </div>
-                {tariffs.map((item) => (
-                    <div className={styles.tariffs_info}>
-                        <label>{item.name}</label>
-                        <label>{item.price}</label>
-                        <label>{item.bandwidth}</label>
-                        <label>{item.bandwidth_bonus}</label>
-                        <div>
-                            <button>Edit</button>
-                            <button id={item.id} onClick={onDeleteTariffHandler}>Delete</button>
-                        </div>
+                {isAdmin ? (<>
+                    <button onClick={addTariffHandler}>Add new tariff</button>
+                    <div className={styles.head}>
+                        <label>Name</label>
+                        <label>Price</label>
+                        <label>Bandwidth</label>
+                        <label>Bonus</label>
                     </div>
-                ))}
+                    {tariffs.map((item) => (
+                        <div className={styles.tariffs_info}>
+                            <label>{item.name}</label>
+                            <label>{item.price}</label>
+                            <label>{item.bandwidth}</label>
+                            <label>{item.bandwidth_bonus}</label>
+                            <div>
+                                <button>Edit</button>
+                                <button id={item.id} onClick={onDeleteTariffHandler}>Delete</button>
+                            </div>
+                        </div>
+                    ))}
+                </>) : (<div>You have no rights</div>)}
             </div>
             <Footer/>
         </div>
