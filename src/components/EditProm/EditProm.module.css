@@ -1,0 +1,8 @@
+.promotions_body{
+    background: linear-gradient(180deg, #E73A3A00 0%, #617FE8 100%);
+}
+.content{
+    width: 700px;
+    height: 500px;
+    margin: 0 auto;
+}

@@ -41,6 +41,10 @@ const EditTariffs = () => {
             .then(response => {window.location.reload()})
 
     }
+    const onEditTariffHandler = (event) => {
+        const buttonsId =  event.currentTarget.id
+        navigate(`/edit-tariff/${buttonsId}`)
+    }
     return (
         <div className={styles.tariffs_body}>
             <Header/>
@@ -60,7 +64,7 @@ const EditTariffs = () => {
                             <label>{item.bandwidth}</label>
                             <label>{item.bandwidth_bonus}</label>
                             <div>
-                                <button>Edit</button>
+                                <button id={item.id} onClick={onEditTariffHandler}>Edit</button>
                                 <button id={item.id} onClick={onDeleteTariffHandler}>Delete</button>
                             </div>
                         </div>

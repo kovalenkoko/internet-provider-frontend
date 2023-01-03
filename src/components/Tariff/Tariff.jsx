@@ -52,7 +52,6 @@ const Tariff = () => {
                 </div>
                 {tariffs.map((item) => (
                     <div className={styles.tariffs_info}>
-                        <label>{item.id}</label>
                         <label>{item.name}</label>
                         <label>{item.price}</label>
                         <label>{item.bandwidth}</label>

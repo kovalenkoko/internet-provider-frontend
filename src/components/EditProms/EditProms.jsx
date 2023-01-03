@@ -17,6 +17,7 @@ const EditProms = () => {
         navigate("/add-promotion")
     }
 
+
     useEffect(() => {
         const requestOptions = {
             method: 'GET',
@@ -41,12 +42,17 @@ const EditProms = () => {
             .then(response => {window.location.reload()})
 
     }
+    const onEditPromHandler = (event) => {
+        const buttonsId =  event.currentTarget.id
+        navigate(`/edit-promotion/${buttonsId}`)
+    }
+
     return (
         <div className={styles.promotions_body}>
             <Header/>
             <div className={styles.content}>
                 {isAdmin ? (<>
-                    <button onClick={addPromHandler}>Add new promotion</button>
+                    <button onClick={addPromHandler}>Add new tariff plan</button>
                     <div className={styles.head}>
                         <label>Name</label>
                         <label>Discount</label>
@@ -58,7 +64,7 @@ const EditProms = () => {
                             <label>{item.discount}</label>
                             <label>{item.duration}</label>
                             <div>
-                                <button>Edit</button>
+                                <button id={item.id} onClick={onEditPromHandler}>Edit</button>
                                 <button id={item.id} onClick={onDeletePromHandler}>Delete</button>
                             </div>
                         </div>

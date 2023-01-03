@@ -11,6 +11,8 @@ import AddProm from "./components/AddProm/AddProm";
 import EditTariffs from "./components/EditTariffs/EditTariffs";
 import AddTariff from "./components/AddTariff/AddTariff";
 import Start from "./Start";
+import EditProm from "./components/EditProm/EditProm";
+import EditTariff from "./components/EditTariff/EditTariff";
 
 export const ROUTES = [
     {
@@ -64,6 +66,14 @@ export const ROUTES = [
     {
         path: '/deposit',
         element: <Deposit/>,
+    },
+    {
+        path: `/edit-promotion/:id`,
+        element: <EditProm/>,
+    },
+    {
+        path: `/edit-tariff/:id`,
+        element: <EditTariff/>,
     },
     {
         path: '*',
