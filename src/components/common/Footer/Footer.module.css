@@ -1,69 +1,60 @@
-.footer{
-    margin-top: 100px;
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    background: rgba(0, 0, 0, 0.6);
+.footer {
+  font-family: "Noto Sans";
+  font-style: normal;
+  padding: 30px 100px 100px;
+  margin-top: 100px;
+  height: 150px;
+  background: rgba(0, 0, 0, 0.6);
+}
 
+.logo_wrap {
+  display: flex;
+  justify-content: space-between;
 }
-.logo_wrap{
-    margin: 0 auto;
-    padding-top: 30px;
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
+
+.download_btns_wrap {
+  display: flex;
+  margin-top: 10px;
 }
-.download_btns_wrap{
-    display: flex;
-    margin-top: 10px;
+
+.links_wrap {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto 0;
 }
-.links_wrap{
-    display: flex;
-    justify-content: space-between;
-    margin: 40px auto 0;
-    width: 80%;
+
+.social_wrap {
+  display: flex;
 }
-.social_wrap{
-    display: flex;
-}
+
 .download_btns {
-    width: 120px;
+  display: flex;
+  width: 120px;
 }
-.logo_title{
-    font-family: 'Noto Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 54px;
-    letter-spacing: 0.12em;
 
-    color: #FFFFFF;
+.logo_title {
+  font-weight: 600;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
 }
-.soon_btn{
-    font-family: 'Noto Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 27px;
-    letter-spacing: 0.12em;
 
-    color: #FFFFFF;
-    margin-right: 10px;
+.soon_btn {
+  font-size: 18px;
+  color: white;
+  margin: auto;
+  margin-right: 15px;
 }
-.download_btns_a{
-    margin-right: 10px;
+
+.download_btns_a {
+  margin-right: 15px;
 }
-.social_img{
-    margin-right: 10px;
+
+.social_img {
+  margin-right: 15px;
 }
-.rights{
-    font-family: 'Noto Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 22px;
-    letter-spacing: 0.12em;
-    color: #FFFFFF;
+
+.rights {
+  font-size: 15px;
+  color: white;
 }

@@ -6,11 +6,19 @@ import facebookImg from "../../../static/facebook.svg"
 import instImg from "../../../static/inst.svg"
 import twitterImg from "../../../static/twitter.svg"
 import vkImg from "../../../static/vk.svg"
+import { useNavigate } from 'react-router'
+
 const Footer = () => {
+    const navigate = useNavigate()
+
+    const promotionsHandler = () => {
+        navigate("/promotions")
+    }
+
     return (
         <div className={styles.footer}>
             <div className={styles.logo_wrap}>
-                <label className={styles.logo_title} >MarlborSoft</label>
+                <label onClick={promotionsHandler} className={styles.logo_title}>MarlborSoft</label>
                 <div className={styles.download_btns_wrap}>
                     <label className={styles.soon_btn}>Coming Soon</label>
                     <a className={styles.download_btns_a} href={"#"}>
@@ -41,4 +49,5 @@ const Footer = () => {
         </div>
     )
 }
+
 export default Footer

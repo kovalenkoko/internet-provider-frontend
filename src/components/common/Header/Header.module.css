@@ -1,103 +1,101 @@
-.header{
-    width: 98%;
-    margin: 0 auto;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
+.header {
+  font-family: "Noto Sans";
+  font-style: normal;
+  padding: 30px 100px 100px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
 }
-.logo_title{
-    font-family: 'Noto Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 55px;
-    line-height: 75px;
 
-    letter-spacing: 0.12em;
+.logo_title {
+  font-weight: 600;
+  font-size: 30px;
+  height: 75px;
+  cursor: pointer;
+}
 
-    color: #000000;
+.navbar_wrapper {
+  font-size: 25px;
+  width: 40%;
+  height: 50px;
+  padding-top: 5px;
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
 }
-.navbar{
-    font-family: 'Noto Sans';
-    width: 45%;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 42px;
-    line-height: 57px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    color: #000000;
-    margin: auto 0;
 
+.promotions_label {
+  cursor: pointer;
 }
-.label_wrapper{
-    width: 85%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-}
-.promotions_label{
-    font-family: 'Noto Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 42px;
-    line-height: 57px;
-    cursor: pointer;
-    color: #000000;
-}
-.promotions_label_active{
-    font-family: 'Noto Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 42px;
-    line-height: 57px;
-    cursor: pointer;
-    color: #000000;
-}
-.tariff_label{
-    font-family: 'Noto Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 42px;
-    line-height: 57px;
-    cursor: pointer;
 
-    color: #000000;
+.promotions_label_active {
+  font-weight: 600;
+  cursor: pointer;
 }
-.tariff_label_active{
-    font-family: 'Noto Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 42px;
-    line-height: 57px;
-    cursor: pointer;
-    color: #000000;
+
+.tariff_label {
+  cursor: pointer;
 }
-.user_info{
-    width: 22%;
-    height: 80%;
-    display: flex;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    margin: auto 0;
+
+.tariff_label_active {
+  font-weight: 600;
+  cursor: pointer;
 }
-.user_info_wrapper{
-    display: flex;
-    margin: auto auto;
+
+.header_btns {
+  display: flex;
+  font-size: 20px;
 }
-.username{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 39px;
-    color: #000000;
-    margin: auto 0 auto 10px;
+
+.user_info {
+  display: flex;
+  background: white;
+  width: fit-content;
+  height: 50px;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  cursor: pointer;
 }
-.user_image{
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
+
+.user_info_wrapper {
+  display: flex;
+}
+
+.user_image {
+  margin: auto;
+  height: 40px;
+}
+
+.username {
+  padding-top: 3px;
+  margin: auto;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.log_out_btn {
+  display: flex;
+  background: white;
+  width: fit-content;
+  height: 50px;
+  padding-right: 30px;
+  padding-left: 30px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.log_out_label {
+  margin: auto;
+  cursor: pointer;
 }
