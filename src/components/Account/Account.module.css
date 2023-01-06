@@ -1,145 +1,152 @@
-.account_body{
-    background: linear-gradient(180deg, rgba(217, 58, 231, 0) 0%, #E7633A 100%);
-}
-.acc_data{
-    width: 90%;
-    margin: 56px auto 0;
-}
-.set_btns_wrapper{
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    margin: 27px auto 0;
-}
-.acc_data_label{
-    width: 260px;
-    margin:0 auto;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 58px;
-    color: #000000;
-
-}
-.change_tariff_btn{
-    width: 500px;
-    height: 80px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    cursor: pointer;
-}
-.deposit_btn{
-    width: 500px;
-    height: 80px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    cursor: pointer;
-}
-.info_btns{
-    display: block;
-    width: fit-content;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 32px;
-    line-height: 48px;
-    color: #000000;
-    margin: 15px auto auto;
-
-}
-.current_plan_wrapper{
-    height: 80px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    margin-top: 27px;
-    display: flex;
-}
-.mobile_img{
-    height: 50px;
-    width: 50px;
-    margin: auto 30px auto 30px;
-}
-.curr_plan_label{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 32px;
-    line-height: 48px;
-    margin: auto 30px auto 0;
-    color: #000000;
-}
-.tariff_div{
-    width: fit-content;
-    padding: 0 10px 0 10px;
-    height: 50px;
-    background: #FFFFFF;
-    border: 3px solid #000000;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 28px;
-    line-height: 39px;
-    margin: auto 0;
-    color: #000000;
+.account_body {
+  background: linear-gradient(180deg, rgba(217, 58, 231, 0) 0%, #e7633a 100%);
 }
 
-.user_form_wrapper{
-    background: #FFFFFF;
-    border-radius: 10px;
-    margin: 27px auto 0;
-}
-.user_form{
-    width: fit-content;
-    margin: 0 auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-.info_wrapper{
-    display: flex;
-    margin-bottom: 15px;
-}
-.user_info_label{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 28px;
-    line-height: 39px;
-    color: #000000;
-    margin-right: 12px;
-}
-.user_info_input{
-    background: #FFFFFF;
-    border: 3px solid #000000;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 28px;
-    line-height: 39px;
-    color: #000000;
-}
-.btns_wrapper{
-    display: flex;
-    justify-content: space-between;
-}
-.save_btn,
-.admin_panel_btn,
-.log_out_btn{
-    width: fit-content;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.75);
-    border: 3px solid #000000;
-    border-radius: 10px;
-    font-family: 'Noto Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 44px;
-    color: #000000;
-    cursor: pointer;
+.acc_data {
+  font-family: "Noto Sans";
+  font-style: normal;
+  padding: 10px 100px 100px;
 }
 
+.acc_data_label {
+  text-align: center;
+  font-size: 30px;
+}
+
+.acc_main_blocks {
+  display: flex;
+  justify-content: space-between;
+  width: 81%;
+  margin: 10px auto;
+  font-size: 20px;
+}
+
+.user_form_wrap {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.user_form {
+  padding: 40px;
+}
+
+.info_wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.user_info_label {
+  padding-right: 15px;
+}
+
+.user_info_input {
+  padding-left: 10px;
+  border: 2px solid black;
+  box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+
+.btns_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.management_btn {
+  font-weight: 600;
+  width: fit-content;
+  background: white;
+  border: 2px solid black;
+  border-radius: 7px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.set_btns_wrapper {
+  display: flex;
+}
+
+.change_tariff_btn {
+  width: 280px;
+  height: 60px;
+  margin-right: 10px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.change_tariff_btn_wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+
+.change_tariff_img {
+  width: 60px;
+}
+
+.deposit_btn {
+  width: 280px;
+  height: 60px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.deposit_btn_wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin: auto;
+}
+
+.card_images {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.visa_img {
+  width: 60px;
+  padding-top: 13px;
+}
+
+.maestro_img {
+  width: 50px;
+}
+
+.mastercard_img {
+  width: 60px;
+}
+
+.info_btns {
+  text-align: center;
+  padding-top: 12px;
+  cursor: pointer;
+}
+
+.current_plan_wrapper {
+  padding: 40px;
+  margin-top: 10px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.tariff_info_wrapper {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.mobile_img {
+  height: 40px;
+  padding-right: 10px;
+}
+
+.tariff_label_title {
+  font-weight: 600;
+  padding-right: 10px;
+}
