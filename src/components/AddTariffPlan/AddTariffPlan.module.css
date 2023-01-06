@@ -1,0 +1,58 @@
+.tariff_body {
+  background: linear-gradient(180deg, rgba(144, 58, 231, 0) 0%, #5071e4 100%);
+}
+
+.content {
+  font-family: "Noto Sans";
+  font-style: normal;
+  padding: 50px 220px 200px;
+}
+
+.add_tariff_label {
+  text-align: center;
+  font-size: 25px;
+}
+
+.tariff_form {
+  display: block;
+  width: 550px;
+  background: white;
+  font-size: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 10px auto;
+  padding: 30px 50px;
+}
+
+.tariff_field_div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.tariff_field_input {
+  padding-left: 10px;
+  border: 2px solid black;
+  box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+
+.tariff_form_btn {
+  font-weight: 600;
+  width: fit-content;
+  background: white;
+  border: 2px solid black;
+  border-radius: 7px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 3px 12px;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+}
+
+/* No rights div */
+
+.no_rights_div {
+  text-align: center;
+  font-size: 30px;
+}
