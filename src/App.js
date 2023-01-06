@@ -1,13 +1,10 @@
 import React, {useContext, useEffect, useState} from 'react'
-import {Route, Routes} from "react-router";
-import {ROUTES} from "./routes";
+import {Route, Routes} from "react-router"
+import {ROUTES} from "./routes"
 import "./App.css"
-import { UserContext} from "./user-context";
-
-
+import { UserContext} from "./user-context"
 
 function App() {
-
    // const {data, toggleData} = useContext(UserContext)
     const [data, toggleData] = useState(null)
     useEffect(() => {
@@ -16,6 +13,7 @@ function App() {
             toggleData(JSON.parse(storage))
         }
     }, [])
+
     return (
         <div className="App">
             <UserContext.Provider value={{data, toggleData}}>

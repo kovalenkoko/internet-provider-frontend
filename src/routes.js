@@ -1,20 +1,22 @@
-import Auth from "./components/Auth/Auth";
-import Register from "./components/Register/Register";
-import Promotions from "./components/Promotions/Promotions";
-import Tariff from "./components/Tariff/Tariff";
-import Account from "./components/Account/Account";
-import Deposit from "./components/Deposit/Deposit";
-import AdminPanel from "./components/AdminPanel/AdminPanel";
-import UserList from "./components/UserList/UserList";
-import EditProms from "./components/EditProms/EditProms";
-import AddProm from "./components/AddProm/AddProm";
-import EditTariffs from "./components/EditTariffs/EditTariffs";
-import AddTariff from "./components/AddTariff/AddTariff";
-import Start from "./Start";
-import EditProm from "./components/EditProm/EditProm";
-import EditTariff from "./components/EditTariff/EditTariff";
+import styles from "./App.css"
+import Start from "./Start"
+import Auth from "./components/Auth/Auth"
+import Register from "./components/Auth/Register"
+import Account from "./components/Account/Account"
+import UserList from "./components/UserList/UserList"
+import Deposit from "./components/Deposit/Deposit"
+import Promotions from "./components/Promotions/Promotions"
+import AddPromotion from "./components/AddPromotion/AddPromotion"
+import EditPromotion from "./components/EditPromotion/EditPromotion"
+import TariffPlans from "./components/TariffPlans/TariffPlans"
+import AddTariffPlan from "./components/AddTariffPlan/AddTariffPlan"
+import EditTariffPlan from "./components/EditTariffPlan/EditTariffPlan"
 
 export const ROUTES = [
+    {
+        path: '',
+        element: <Start/>,
+    },
     {
         path: '/',
         element: <Start/>,
@@ -28,55 +30,43 @@ export const ROUTES = [
         element: <Register/>,
     },
     {
-        path: '/promotions',
-        element: <Promotions/>,
-    },
-    {
-        path: '/tariff-plans',
-        element: <Tariff/>,
-    },
-    {
         path: '/personal-account',
         element: <Account/>,
-    },
-    {
-        path: '/admin-panel',
-        element: <AdminPanel/>,
     },
     {
         path: '/user-list',
         element: <UserList/>,
     },
     {
-        path: '/edit-promotions',
-        element: <EditProms/>,
-    },
-    {
-        path: '/add-promotion',
-        element: <AddProm/>,
-    },
-    {
-        path: '/edit-tariff-plans',
-        element: <EditTariffs/>,
-    },
-    {
-        path: '/add-tariff',
-        element: <AddTariff/>,
-    },
-    {
         path: '/deposit',
         element: <Deposit/>,
     },
     {
+        path: '/promotions',
+        element: <Promotions/>,
+    },
+    {
+        path: '/add-promotion',
+        element: <AddPromotion/>,
+    },
+    {
         path: `/edit-promotion/:id`,
-        element: <EditProm/>,
+        element: <EditPromotion/>,
+    },
+    {
+        path: '/tariff-plans',
+        element: <TariffPlans/>,
+    },
+    {
+        path: '/add-tariff',
+        element: <AddTariffPlan/>,
     },
     {
         path: `/edit-tariff/:id`,
-        element: <EditTariff/>,
+        element: <EditTariffPlan/>,
     },
     {
         path: '*',
-        element: <div>No such route</div>,
+        element: <div className={styles.no_route_div}>No such route</div>,
     },
 ];
