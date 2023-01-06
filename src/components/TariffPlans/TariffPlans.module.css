@@ -1,0 +1,73 @@
+.tariff_body {
+  background: linear-gradient(180deg, rgba(144, 58, 231, 0) 0%, #5071e4 100%);
+}
+
+.content {
+  font-family: "Noto Sans";
+  font-style: normal;
+  padding: 50px 220px 267px 220px;
+  font-size: 18px;
+}
+
+.head_admin {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  font-weight: 600;
+  width: 90%;
+  margin: auto;
+}
+
+.head_user {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  font-weight: 600;
+  width: 90%;
+  padding-right: 230px;
+  margin: auto;
+}
+
+.add_tariff_btn {
+  font-weight: 600;
+  width: fit-content;
+  padding: 5px 20px 5px 20px;
+  background: white;
+  border-radius: 7px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.tariffs_info {
+  height: 60px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 10px;
+}
+
+.tariffs_info_wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding-top: 15px;
+  margin: 0 auto;
+}
+
+.tariff_btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tariff_btn {
+  width: 35px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  padding: 4%;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+.tariff_img {
+  width: 50px;
+}
