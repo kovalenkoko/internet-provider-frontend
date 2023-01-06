@@ -1,16 +1,59 @@
-.promotions_body{
-    background: linear-gradient(180deg, #E73A3A00 0%, #617FE8 100%);
+.promotions_body {
+  background: linear-gradient(180deg, rgba(231, 58, 58, 0) 0%, #617fe8 100%);
 }
-.content{
-    width: 700px;
-    height: 500px;
-    margin: 0 auto;
+
+.content {
+  font-family: "Noto Sans";
+  font-style: normal;
+  padding: 50px 250px 262px 250px;
+  font-size: 18px;
 }
-.head{
-    display: flex;
-    justify-content: space-between;
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  font-weight: 600;
+  width: 90%;
+  margin: 0 auto;
 }
-.promotions_info{
-    display: flex;
-    justify-content: space-between;
+
+.add_promotion_btn {
+  font-weight: 600;
+  width: fit-content;
+  padding: 5px 20px 5px 20px;
+  background: white;
+  border-radius: 7px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.promotions_info {
+  height: 60px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 15px;
+  margin-top: 10px;
+}
+
+.promotions_info_wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.promotion_btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.promotion_btn {
+  width: 35px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  padding: 8%;
+  margin-right: 2px;
+  cursor: pointer;
 }
