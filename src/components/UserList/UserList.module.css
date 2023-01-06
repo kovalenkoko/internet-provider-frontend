@@ -1,8 +1,63 @@
-.user_list_body{
-    background: linear-gradient(180deg, rgba(231, 58, 58, 0) 0%, #617FE8 100%);
+.user_list_body {
+  background: linear-gradient(180deg, rgba(231, 58, 58, 0) 0%, #617fe8 100%);
 }
-.user_list_data{
-    height: 400px;
-    width: 90%;
-    margin: 56px auto 0;
+
+.user_list_data {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-size: 18px;
+  padding: 50px 220px 250px;
+}
+
+.user_list_label {
+  text-align: center;
+  font-size: 30px;
+}
+
+.user_list_info {
+  height: 60px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 10px;
+}
+
+.user_list_info_wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding-top: 15px;
+  margin: 0 auto;
+}
+
+.user_username_label {
+  font-weight: 600;
+  padding-right: 50px;
+}
+
+.user_status_label,
+.user_role_label {
+  padding-right: 10px;
+}
+
+.user_status_value {
+  padding-right: 50px;
+}
+
+.user_list_btn {
+  font-weight: 600;
+  width: fit-content;
+  background: white;
+  border: 2px solid black;
+  border-radius: 7px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* No rights div */
+
+.no_rights_div {
+  text-align: center;
+  font-size: 30px;
 }
