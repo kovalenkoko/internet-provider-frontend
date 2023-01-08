@@ -15,47 +15,57 @@ const UserList = () => {
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${dataFromStorage.token}`},
         }
+
         const fetchData = async () => {
             const response = await fetch(`http://localhost:8080/user/get/all`,requestOptions)
             const dataFetch = await response.json()
             serUserList(dataFetch)
         }
+
         dataFromStorage && fetchData().catch(console.error)
     }, [])
 
     const onBlockHandler = (event) => {
         const buttonsId =  event.currentTarget.id
+
         const requestOptions = {
             method: 'PUT',
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${dataFromStorage.token}`},
         }
+
         fetch(`http://localhost:8080/user/block/${buttonsId}`, requestOptions)
             .then(response => response.json())
             .then(data => {
                 window.location.reload()
             })
     }
+
     const onUnBlockHandler = (event) => {
         const buttonsId =  event.currentTarget.id
+
         const requestOptions = {
             method: 'PUT',
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${dataFromStorage.token}`},
         }
+
         fetch(`http://localhost:8080/user/unblock/${buttonsId}`, requestOptions)
             .then(response => response.json())
             .then(data => {
                 window.location.reload()
             })
     }
+
     const onDeleteHandler = (event) => {
         const buttonsId =  event.currentTarget.id
+
         const requestOptions = {
             method: 'DELETE',
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${dataFromStorage.token}`},
         }
+        
         fetch(`http://localhost:8080/user/delete/${buttonsId}`, requestOptions)
             .then(response => response.json())
             .then(data => {

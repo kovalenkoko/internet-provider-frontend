@@ -30,7 +30,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className={styles.links_wrap}>
-                <label className={styles.rights} >© 2022 MarlborSoft, Inc. All rights reserved</label>
+                <label className={styles.rights} >© 2022-2023 MarlborSoft, Inc. All rights reserved</label>
                 <div className={styles.social_wrap}>
                     <a className={styles.social_img} href={"#"}>
                         <img src={facebookImg} alt={"facebook"}/>

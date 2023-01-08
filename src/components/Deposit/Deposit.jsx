@@ -11,6 +11,7 @@ import {useNavigate} from "react-router"
 const Deposit = () => {
     const [deposit, setDeposit] = useState("")
     const {data, toggleData} = useContext(UserContext)
+    
     const navigate = useNavigate()
 
     const onDepositHandler = () => {
@@ -19,11 +20,13 @@ const Deposit = () => {
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
         }
-        fetch(`http://localhost:8080/user/putbalance?userId=${data?.user.id}&amount=${deposit}`, requestOptions)
+
+        fetch(`http://localhost:8080/user/put-balance?userId=${data?.user.id}&amount=${deposit}`, requestOptions)
             .then(response => response.json())
             .then(data => {
                 navigate("/personal-account")
             })
+            
         setDeposit("")
     }
     

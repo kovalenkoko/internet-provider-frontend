@@ -6,19 +6,23 @@ import {UserContext} from "../../../user-context"
 
 const Header = () => {
     const navigate = useNavigate()
-    const isPromotions = window.location.pathname.split('/')[1] === 'promotions'
-    const isTariff = window.location.pathname.split('/')[1] === 'tariff-plans'
     const {data, toggleData} = useContext(UserContext)
     
+    const isPromotions = window.location.pathname.split('/')[1] === 'promotions'
+    const isTariff = window.location.pathname.split('/')[1] === 'tariff-plans'
+
     const promotionsHandler = () => {
         navigate("/promotions")
     }
+
     const tariffHandler = () => {
         navigate("/tariff-plans")
     }
+
     const accountHandler = () => {
         navigate("/personal-account")
     }
+    
     const logOutHandler = () => {
         localStorage.removeItem('data')
         navigate("/auth")

@@ -5,7 +5,7 @@ import Footer from "../common/Footer/Footer"
 import {useNavigate, useParams} from "react-router"
 import {UserContext} from "../../user-context"
 
-const EditProm = () => {
+const EditPromotion = () => {
     const [name, setName] = useState("")
     const [discountPercent, setDiscountPercent] = useState("")
     const [duration, setDuration] = useState("")
@@ -17,6 +17,7 @@ const EditProm = () => {
 
     const dataFromStorage = JSON.parse(localStorage.getItem("data"))
     const isAdmin = dataFromStorage.user.roles.length === 2
+    
     const params = useParams()
     const promId = params.id
 
@@ -26,11 +27,13 @@ const EditProm = () => {
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
         }
+
         const fetchData = async () => {
-            const response = await fetch(`http://localhost:8080/promotion/getbyid/${promId}`, requestOptions)
+            const response = await fetch(`http://localhost:8080/promotion/get-by-id/${promId}`, requestOptions)
             const dataFetch = await response.json()
             setPromotion(dataFetch)
         }
+
         data && fetchData().catch(console.error)
     }, [data])
 
@@ -41,6 +44,7 @@ const EditProm = () => {
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
             body: JSON.stringify({id:promId, name, discountPercent, duration})
         }
+        
         fetch('http://localhost:8080/promotion/update', requestOptions)
             .then(response => response.json())
             .then(data => {
@@ -77,4 +81,4 @@ const EditProm = () => {
     )
 }
 
-export default EditProm
+export default EditPromotion

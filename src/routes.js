@@ -14,10 +14,6 @@ import EditTariffPlan from "./components/EditTariffPlan/EditTariffPlan"
 
 export const ROUTES = [
     {
-        path: '',
-        element: <Start/>,
-    },
-    {
         path: '/',
         element: <Start/>,
     },

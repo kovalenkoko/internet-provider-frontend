@@ -5,7 +5,7 @@ import Footer from "../common/Footer/Footer"
 import {useNavigate} from "react-router"
 import {UserContext} from "../../user-context"
 
-const AddTariff = () => {
+const AddTariffPlan = () => {
     const [name, setName] = useState("")
     const [monthPrice, setMonthPrice] = useState("")
     const [bandwidth, setBandwidth] = useState("")
@@ -25,7 +25,8 @@ const AddTariff = () => {
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
             body: JSON.stringify({ name, monthPrice, bandwidth, bonus })
         }
-        fetch('http://localhost:8080/tariffplan/create', requestOptions)
+        
+        fetch('http://localhost:8080/tariff-plan/create', requestOptions)
             .then(response => response.json())
             .then(data => {
                 navigate("/tariff-plans")
@@ -65,4 +66,4 @@ const AddTariff = () => {
     )
 }
 
-export default AddTariff
+export default AddTariffPlan

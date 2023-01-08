@@ -10,12 +10,15 @@ const Register = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
+
     const navigate = useNavigate()
+    
     const {data, toggleData} = useContext(UserContext)
 
     const signIpHandler = () => {
         navigate("/auth")
     }
+
     const signUpHandler = () => {
         const requestOptions = {
             method: 'POST',
@@ -23,14 +26,16 @@ const Register = () => {
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
             body: JSON.stringify({ username: userName, email: email, password: password})
         }
-        if(password === confirmPassword){
-        fetch('http://localhost:8080/auth/signup', requestOptions)
-            .then(response => response.json())
-            .then(data => {
-                localStorage.setItem('data', JSON.stringify(data))
-                toggleData(data)
-            })
+
+        if(password === confirmPassword) {
+            fetch('http://localhost:8080/auth/signup', requestOptions)
+                .then(response => response.json())
+                .then(data => {
+                    localStorage.setItem('data', JSON.stringify(data))
+                    toggleData(data)
+                })
         }
+
         setUserName("")
         setEmail("")
         setPassword("")
@@ -71,4 +76,5 @@ const Register = () => {
         </div>
     )
 }
+
 export default Register

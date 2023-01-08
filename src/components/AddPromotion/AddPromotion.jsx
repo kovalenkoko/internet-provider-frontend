@@ -5,7 +5,7 @@ import Footer from "../common/Footer/Footer"
 import {useNavigate, useParams} from "react-router"
 import {UserContext} from "../../user-context"
 
-const AddProm = () => {
+const AddPromotion = () => {
     const [name, setName] = useState("")
     const [discountPercent, setDiscountPercent] = useState("")
     const [duration, setDuration] = useState("")
@@ -24,6 +24,7 @@ const AddProm = () => {
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
             body: JSON.stringify({ name, discountPercent, duration})
         }
+        
         fetch('http://localhost:8080/promotion/create', requestOptions)
             .then(response => response.json())
             .then(data => {
@@ -60,4 +61,4 @@ const AddProm = () => {
     )
 }
 
-export default AddProm
+export default AddPromotion

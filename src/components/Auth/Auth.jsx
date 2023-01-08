@@ -8,6 +8,7 @@ import {UserContext} from "../../user-context"
 const Auth = () => {
     const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
+    
     const navigate = useNavigate()
 
     const {data, toggleData} = useContext(UserContext)
@@ -15,6 +16,7 @@ const Auth = () => {
     const signUpHandler = () => {
         navigate("/register")
     }
+
     const signInHandler = () => {
         const requestOptions = {
             method: 'POST',
@@ -22,15 +24,17 @@ const Auth = () => {
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
             body: JSON.stringify({ username: userName, password: password})
         }
+        
         fetch('http://localhost:8080/auth/signin', requestOptions)
             .then(response => response.json())
             .then(data => {
                 localStorage.setItem('data', JSON.stringify(data))
                 toggleData(data)
+                navigate("/promotions")
             })
+
         setUserName("")
         setPassword("")
-        navigate("/promotions")
     }
 
     return (

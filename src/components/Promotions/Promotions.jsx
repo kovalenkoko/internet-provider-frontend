@@ -9,7 +9,9 @@ import { useNavigate } from "react-router"
 
 const Promotions = () => {
     const [promotions, setPromotions] = useState([])
+    
     const {data, toggleData} = useContext(UserContext)
+    
     const navigate = useNavigate()
 
     const dataFromStorage = JSON.parse(localStorage.getItem("data"))
@@ -25,21 +27,25 @@ const Promotions = () => {
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
         }
+
         const fetchData = async () => {
             const response = await fetch('http://localhost:8080/promotion/get/all', requestOptions)
             const data = await response.json()
             setPromotions(data)
         }
+
         data && fetchData().catch(console.error)
     }, [data])
 
     const onDeletePromHandler = (event) => {
         const buttonsId =  event.currentTarget.id
+        
         const requestOptions = {
             method: 'DELETE',
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
         }
+
         fetch(`http://localhost:8080/promotion/delete/${buttonsId}`, requestOptions)
             .then(response => {window.location.reload()})
 

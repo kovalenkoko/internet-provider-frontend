@@ -5,7 +5,7 @@ import Footer from "../common/Footer/Footer"
 import {useNavigate, useParams} from "react-router"
 import {UserContext} from "../../user-context"
 
-const EditTariff = () => {
+const EditTariffPlan = () => {
     const [name, setName] = useState("")
     const [monthPrice, setMonthPrice] = useState("")
     const [bandwidth, setBandwidth] = useState("")
@@ -18,6 +18,7 @@ const EditTariff = () => {
 
     const dataFromStorage = JSON.parse(localStorage.getItem("data"))
     const isAdmin = dataFromStorage.user.roles.length === 2
+    
     const params = useParams()
     const tariffId = params.id
 
@@ -27,11 +28,13 @@ const EditTariff = () => {
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
         }
+
         const fetchData = async () => {
-            const response = await fetch(`http://localhost:8080/tariffplan/getbyid/${tariffId}`, requestOptions)
+            const response = await fetch(`http://localhost:8080/tariff-plan/get-by-id/${tariffId}`, requestOptions)
             const dataFetch = await response.json()
             setTariff(dataFetch)
         }
+
         data && fetchData().catch(console.error)
     }, [data])
 
@@ -42,7 +45,8 @@ const EditTariff = () => {
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
             body: JSON.stringify({ id:tariffId, name, monthPrice, bandwidth, bonus })
         }
-        fetch('http://localhost:8080/tariffplan/update', requestOptions)
+        
+        fetch('http://localhost:8080/tariff-plan/update', requestOptions)
             .then(response => response.json())
             .then(data => {
                 navigate("/tariff-plans")
@@ -83,4 +87,4 @@ const EditTariff = () => {
     )
 }
 
-export default EditTariff
+export default EditTariffPlan

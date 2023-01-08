@@ -9,10 +9,12 @@ import deleteImg from "../../static/delete.svg"
 import {UserContext} from "../../user-context"
 import {useNavigate} from "react-router"
 
-const Tariff = () => {
+const TariffPlans = () => {
     const [userInfo, setUserInfo] = useState([])
     const [tariffs, setTariffs] = useState([])
+    
     const {data, toggleData} = useContext(UserContext)
+
     const navigate = useNavigate()
 
     const dataFromStorage = JSON.parse(localStorage.getItem("data"))
@@ -30,10 +32,11 @@ const Tariff = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('http://localhost:8080/tariffplan/get/all', requestOptions)
+            const response = await fetch('http://localhost:8080/tariff-plan/get/all', requestOptions)
             const data = await response.json()
             setTariffs(data)
         }
+
         data && fetchData().catch(console.error)
     }, [])
 
@@ -43,26 +46,29 @@ const Tariff = () => {
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
         }
+
         const fetchData = async () => {
-            const response = await fetch(`http://localhost:8080/user/getbyid/${data?.user.id}`, requestOptions)
+            const response = await fetch(`http://localhost:8080/user/get-by-id/${data?.user.id}`, requestOptions)
             const dataFetch = await response.json()
             setUserInfo(dataFetch)
         }
+
         data && fetchData().catch(console.error)
     }, [data])
 
     const onSelectHandler = (event) => {
         const buttonsId =  event.currentTarget.id
+
         const requestOptions = {
             method: 'PUT',
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
         }
-        fetch(`http://localhost:8080/tariffplan/activate/${data?.user.id}/${buttonsId}`, requestOptions)
+
+        fetch(`http://localhost:8080/tariff-plan/activate/${data?.user.id}/${buttonsId}`, requestOptions)
             .then(response => {
                 navigate("/personal-account")
             })
-
     }
 
     const onUnselectHandler = (event) => {
@@ -71,7 +77,8 @@ const Tariff = () => {
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
         }
-        fetch(`http://localhost:8080/tariffplan/deactivate/${data?.user.id}`, requestOptions)
+
+        fetch(`http://localhost:8080/tariff-plan/deactivate/${data?.user.id}`, requestOptions)
             .then(response => {
                 navigate("/personal-account")
             })
@@ -80,14 +87,15 @@ const Tariff = () => {
 
     const onDeleteTariffHandler = (event) => {
         const buttonsId =  event.currentTarget.id
+
         const requestOptions = {
             method: 'DELETE',
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
         }
-        fetch(`http://localhost:8080/tariffplan/delete/${buttonsId}`, requestOptions)
-            .then(response => {window.location.reload()})
 
+        fetch(`http://localhost:8080/tariff-plan/delete/${buttonsId}`, requestOptions)
+            .then(response => {window.location.reload()})
     }
 
     const onEditTariffHandler = (event) => {
@@ -141,4 +149,4 @@ const Tariff = () => {
     )
 }
 
-export default Tariff
+export default TariffPlans
