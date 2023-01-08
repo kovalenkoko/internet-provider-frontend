@@ -12,7 +12,9 @@ import {UserContext} from "../../user-context"
 
 const Account = () => {
     const navigate = useNavigate()
+
     const {data, toggleData} = useContext(UserContext)
+
     const [userInfo, setUserInfo] = useState([])
     const [userName, setUserName] = useState("")
     const [firstName, setFirstName] = useState("")
@@ -23,7 +25,6 @@ const Account = () => {
 
     const dataFromStorage = JSON.parse(localStorage.getItem("data"))
     const isAdmin = dataFromStorage.user.roles.length === 2
-
 
     const changeTariffHandler = () => {
         navigate("/tariff-plans")
@@ -36,25 +37,24 @@ const Account = () => {
     const onUserListHandler = () => {
         navigate("/user-list")
     }
-
-    const onAdminPanelHandler = () =>{
-        navigate("/admin-panel")
-    }
-
+    
     useEffect(() => {
         const requestOptions = {
             method: 'GET',
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
         }
+
         const fetchData = async () => {
-            const response = await fetch(`http://localhost:8080/user/getbyid/${data?.user.id}`, requestOptions)
+            const response = await fetch(`http://localhost:8080/user/get-by-id/${data?.user.id}`, requestOptions)
             const dataFetch = await response.json()
             setUserInfo(dataFetch)
-            const responseTariff = await fetch(`http://localhost:8080/tariffplan/getbyid/${dataFetch?.tariff_plan_id}`, requestOptions)
+
+            const responseTariff = await fetch(`http://localhost:8080/tariff-plan/get-by-id/${dataFetch?.tariff_plan_id}`, requestOptions)
             const dataFetchTariff = await responseTariff.json()
             setTariff(dataFetchTariff)
         }
+
         data && fetchData().catch(console.error)
     }, [data])
 
@@ -63,6 +63,7 @@ const Account = () => {
         const last_name = lastName ? lastName : userInfo.last_name
         const email = emailForm ? emailForm : userInfo.email
         const phone = phoneNumber ? phoneNumber : userInfo.phone
+
         const formBody = {
             id: userInfo.id,
             username: userInfo.username,
@@ -72,6 +73,7 @@ const Account = () => {
             phone,
             status: userInfo.status
         }
+
         const requestOptions = {
             method: 'PUT',
             mode: 'cors',
@@ -86,11 +88,53 @@ const Account = () => {
                 window.location.reload()
             })
 
-       setEmailForm("")
-       setPhoneNumber("")
+       setUserName("")
        setFirstName("")
        setLastName("")
-       setUserName("")
+       setEmailForm("")
+       setPhoneNumber("")
+    }
+    
+    const convertToBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+            fileReader.onload = () => {
+                resolve(fileReader.result);
+            };
+            fileReader.onerror = (error) => {
+                reject(error);
+            };
+        });
+    };
+
+    const onUploadFileHandler = async (event) => {
+        const file = event.target.files[0];
+        const base64 = await convertToBase64(file);
+
+        const requestOptions = {
+            method: 'PATCH',
+            mode: 'cors',
+            headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
+            body: JSON.stringify(base64)
+        }
+
+        fetch(`http://localhost:8080/user/update-image?userId=${data?.user.id}`, requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                setUserInfo(data)
+        })
+    }
+
+    const onDeleteFileHandler = () => {
+        const requestOptions = {
+            method: 'DELETE',
+            mode: 'cors',
+            headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
+        }
+
+        fetch(`http://localhost:8080/user/delete-image?userId=${data?.user.id}`, requestOptions)
+            .then(response => {window.location.reload()})
     }
 
     return (
@@ -101,25 +145,39 @@ const Account = () => {
                 <div className={styles.acc_main_blocks}>
                     <div className={styles.user_form_wrap}>
                         <div className={styles.user_form}>
+                            <div className={styles.info_user_image_wrap}>
+                                <img className={styles.user_image} src={`${userInfo?.base64_image}`} alt={"User Image"}/>
+                                <div className={styles.user_image_btns}>
+                                    <div className={styles.user_image_input_wrap}>
+                                        <label className={styles.user_image_input_label}>Choose</label>
+                                        <input className={styles.user_image_input} type="file" title="" accept=".jpeg, .png, .jpg" onChange={(event) => onUploadFileHandler(event)}/>
+                                    </div>
+                                    <button className={styles.user_image_delete_btn} onClick={onDeleteFileHandler}>Delete</button>
+                                </div>
+                            </div>
+                            <div className={styles.info_wrapper}>
+                                <label className={styles.user_info_label}>Image:</label>
+                                <div className={styles.user_info_label} >{userInfo?.file_name}</div>
+                            </div>
                             <div className={styles.info_wrapper}>
                                 <label className={styles.user_info_label}>Username:</label>
                                 <div className={styles.user_info_label} >{userInfo?.username}</div>
                             </div>
                             <div className={styles.info_wrapper}>
                                 <label className={styles.user_info_label}>First name:</label>
-                                <input className={styles.user_info_input} placeholder={"First name"} value={userInfo?.first_name} onChange={e => setFirstName(e.target.value)}/>
+                                <input className={styles.user_info_input} placeholder={"First name"} placeholder={userInfo?.first_name} onChange={e => setFirstName(e.target.value)}/>
                             </div>
                             <div className={styles.info_wrapper}>
                                 <label className={styles.user_info_label}>Last name:</label>
-                                <input className={styles.user_info_input} placeholder={"Last name"} value={userInfo?.last_name} onChange={e => setLastName(e.target.value)}/>
+                                <input className={styles.user_info_input} placeholder={"Last name"} placeholder={userInfo?.last_name} onChange={e => setLastName(e.target.value)}/>
                             </div>
                             <div className={styles.info_wrapper}>
                                 <label className={styles.user_info_label}>Email:</label>
-                                <input className={styles.user_info_input} placeholder={"example@email.com"} value={userInfo?.email} onChange={e => setEmailForm(e.target.value)}/>
+                                <input className={styles.user_info_input} placeholder={"example@email.com"} placeholder={userInfo?.email} onChange={e => setEmailForm(e.target.value)}/>
                             </div>
                             <div className={styles.info_wrapper}>
                                 <label className={styles.user_info_label}>Phone number:</label>
-                                <input className={styles.user_info_input} placeholder={"+375(12)345-67-89"} value={userInfo?.phone} onChange={e => setPhoneNumber(e.target.value)}/>
+                                <input className={styles.user_info_input} placeholder={"+375(12)345-67-89"} placeholder={userInfo?.phone} onChange={e => setPhoneNumber(e.target.value)}/>
                             </div>
                             <div className={styles.info_wrapper}>
                                 <label className={styles.user_info_label}>Balance:</label>
