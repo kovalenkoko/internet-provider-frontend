@@ -9,10 +9,14 @@
   padding: 50px 220px 250px;
 }
 
+/* Title */
+
 .user_list_label {
   text-align: center;
   font-size: 30px;
 }
+
+/* User List form */
 
 .user_list_info {
   height: 60px;

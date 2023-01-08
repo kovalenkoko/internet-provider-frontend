@@ -8,10 +8,14 @@
   padding: 50px 220px 200px;
 }
 
+/* Title */
+
 .edit_promotion_label {
   text-align: center;
   font-size: 25px;
 }
+
+/* Promotion form */
 
 .promotion_form {
   display: block;

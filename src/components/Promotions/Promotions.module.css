@@ -9,6 +9,8 @@
   font-size: 18px;
 }
 
+/* Promotion head */
+
 .head {
   display: flex;
   justify-content: space-between;
@@ -28,6 +30,8 @@
   cursor: pointer;
 }
 
+/* Promotions info */
+
 .promotions_info {
   height: 60px;
   background: white;
@@ -43,6 +47,8 @@
   width: 90%;
   margin: 0 auto;
 }
+
+/* Promotion buttons */
 
 .promotion_btns {
   display: flex;

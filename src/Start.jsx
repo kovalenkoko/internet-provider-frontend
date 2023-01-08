@@ -3,7 +3,8 @@ import {useNavigate} from "react-router";
 
 const Start = () => {
     const navigate = useNavigate()
-    useEffect(()=>{
+    
+    useEffect(() => {
         {navigate("/auth")}
     }, [])
 
@@ -11,4 +12,5 @@ const Start = () => {
         <></>
     )
 }
+
 export default Start

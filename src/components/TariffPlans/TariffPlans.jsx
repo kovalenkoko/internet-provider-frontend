@@ -60,7 +60,7 @@ const TariffPlans = () => {
         const buttonsId =  event.currentTarget.id
 
         const requestOptions = {
-            method: 'PUT',
+            method: 'PATCH',
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
         }
@@ -73,7 +73,7 @@ const TariffPlans = () => {
 
     const onUnselectHandler = (event) => {
         const requestOptions = {
-            method: 'PUT',
+            method: 'PATCH',
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
         }

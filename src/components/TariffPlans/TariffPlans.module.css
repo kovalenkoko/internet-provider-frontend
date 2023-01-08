@@ -9,6 +9,8 @@
   font-size: 18px;
 }
 
+/* Tariff Plan head */
+
 .head_admin {
   display: flex;
   justify-content: space-between;
@@ -38,6 +40,8 @@
   cursor: pointer;
 }
 
+/* Tariff Plans info */
+
 .tariffs_info {
   height: 60px;
   background: white;
@@ -53,6 +57,8 @@
   padding-top: 15px;
   margin: 0 auto;
 }
+
+/* Tariff Plan buttons */
 
 .tariff_btns {
   display: flex;

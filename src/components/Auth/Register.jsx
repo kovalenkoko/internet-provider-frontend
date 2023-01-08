@@ -33,6 +33,7 @@ const Register = () => {
                 .then(data => {
                     localStorage.setItem('data', JSON.stringify(data))
                     toggleData(data)
+                    navigate("/promotions")
                 })
         }
 
@@ -40,8 +41,6 @@ const Register = () => {
         setEmail("")
         setPassword("")
         setConfirmPassword("")
-
-        navigate("/promotions")
     }
 
     return (

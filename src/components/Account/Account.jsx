@@ -123,7 +123,8 @@ const Account = () => {
             .then(response => response.json())
             .then(data => {
                 setUserInfo(data)
-        })
+                window.location.reload()
+            })
     }
 
     const onDeleteFileHandler = () => {
@@ -155,46 +156,42 @@ const Account = () => {
                                     <button className={styles.user_image_delete_btn} onClick={onDeleteFileHandler}>Delete</button>
                                 </div>
                             </div>
-                            <div className={styles.info_wrapper}>
-                                <label className={styles.user_info_label}>Image:</label>
-                                <div className={styles.user_info_label} >{userInfo?.file_name}</div>
-                            </div>
-                            <div className={styles.info_wrapper}>
+                            <div className={styles.info_wrap}>
                                 <label className={styles.user_info_label}>Username:</label>
                                 <div className={styles.user_info_label} >{userInfo?.username}</div>
                             </div>
-                            <div className={styles.info_wrapper}>
+                            <div className={styles.info_wrap}>
                                 <label className={styles.user_info_label}>First name:</label>
                                 <input className={styles.user_info_input} placeholder={"First name"} placeholder={userInfo?.first_name} onChange={e => setFirstName(e.target.value)}/>
                             </div>
-                            <div className={styles.info_wrapper}>
+                            <div className={styles.info_wrap}>
                                 <label className={styles.user_info_label}>Last name:</label>
                                 <input className={styles.user_info_input} placeholder={"Last name"} placeholder={userInfo?.last_name} onChange={e => setLastName(e.target.value)}/>
                             </div>
-                            <div className={styles.info_wrapper}>
+                            <div className={styles.info_wrap}>
                                 <label className={styles.user_info_label}>Email:</label>
                                 <input className={styles.user_info_input} placeholder={"example@email.com"} placeholder={userInfo?.email} onChange={e => setEmailForm(e.target.value)}/>
                             </div>
-                            <div className={styles.info_wrapper}>
+                            <div className={styles.info_wrap}>
                                 <label className={styles.user_info_label}>Phone number:</label>
                                 <input className={styles.user_info_input} placeholder={"+375(12)345-67-89"} placeholder={userInfo?.phone} onChange={e => setPhoneNumber(e.target.value)}/>
                             </div>
-                            <div className={styles.info_wrapper}>
+                            <div className={styles.info_wrap}>
                                 <label className={styles.user_info_label}>Balance:</label>
                                 <div className={styles.user_info_label} >{userInfo?.balance}$</div>
                             </div>
-                            <div className={styles.info_wrapper}>
+                            <div className={styles.info_wrap}>
                                 <label className={styles.user_info_label}>Status:</label>
                                 <div className={styles.user_info_label}>{userInfo?.status}</div>
                             </div>
-                            <div className={styles.btns_wrapper}>
+                            <div className={styles.btns_wrap}>
                                 <button className={styles.management_btn} onClick={onSaveHandler}>Save</button>
                                 {isAdmin ? <button className={styles.management_btn} onClick={onUserListHandler}>User List</button> : <></>}
                             </div>
                         </div>
                     </div>
                     <div>
-                        <div className={styles.set_btns_wrapper}>
+                        <div className={styles.set_btns_wrap}>
                             <div onClick={changeTariffHandler} className={styles.change_tariff_btn}>
                                 <div className={styles.change_tariff_btn_wrap}>
                                     <label className={styles.info_btns}>Change Tariff Plan</label>
@@ -212,30 +209,30 @@ const Account = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.current_plan_wrapper}>
-                            <div className={styles.tariff_info_wrapper}>
+                        <div className={styles.current_plan_wrap}>
+                            <div className={styles.tariff_info_wrap}>
                                 <img src={mobileImg} alt={"Mobile Img"} className={styles.mobile_img}/>
                                 <label className={styles.tariff_label}>Current Tariff Plan:</label>
                             </div>
                             {tariff.name ? <>
-                                <div className={styles.tariff_info_wrapper}>
+                                <div className={styles.tariff_info_wrap}>
                                     <label className={styles.tariff_label_title}>Name:</label>
                                     <label className={styles.tariff_label}>{tariff.name}</label>
                                 </div>
-                                <div className={styles.tariff_info_wrapper}>
+                                <div className={styles.tariff_info_wrap}>
                                     <label className={styles.tariff_label_title}>Month price ($):</label>
                                     <label className={styles.tariff_label}>{tariff.month_price}</label>
                                 </div>
-                                <div className={styles.tariff_info_wrapper}>
+                                <div className={styles.tariff_info_wrap}>
                                     <label className={styles.tariff_label_title}>Bandwidth:</label>
                                     <label className={styles.tariff_label}>{tariff.bandwidth}</label>
                                 </div>
-                                <div className={styles.tariff_info_wrapper}>
+                                <div className={styles.tariff_info_wrap}>
                                     <label className={styles.tariff_label_title}>Bonus:</label>
                                     <label className={styles.tariff_label}>{tariff.bonus}</label>
                                 </div>
                             </> :
-                                <div className={styles.tariff_info_wrapper}>
+                                <div className={styles.tariff_info_wrap}>
                                     <div className={styles.tariff_label}>Not selected</div>
                                 </div>
                             }

@@ -8,10 +8,14 @@
   padding: 50px 220px 200px;
 }
 
+/* Title */
+
 .edit_tariff_label {
   text-align: center;
   font-size: 25px;
 }
+
+/* Tariff Plan form */
 
 .tariff_form {
   display: block;

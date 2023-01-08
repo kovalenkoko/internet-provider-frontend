@@ -13,10 +13,14 @@ input::-webkit-inner-spin-button {
   font-size: 25px;
 }
 
+/* Title */
+
 .deposit_label {
   text-align: center;
   font-size: 30px;
 }
+
+/* Deposit form */
 
 .deposit_form_wrap {
   display: flex;

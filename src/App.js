@@ -5,10 +5,11 @@ import "./App.css"
 import { UserContext} from "./user-context"
 
 function App() {
-   // const {data, toggleData} = useContext(UserContext)
     const [data, toggleData] = useState(null)
+
     useEffect(() => {
         const storage = localStorage.getItem('data')
+        
         if (storage) {
             toggleData(JSON.parse(storage))
         }

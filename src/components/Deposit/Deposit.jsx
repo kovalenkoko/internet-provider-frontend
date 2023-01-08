@@ -16,7 +16,7 @@ const Deposit = () => {
 
     const onDepositHandler = () => {
         const requestOptions = {
-            method: 'PUT',
+            method: 'PATCH',
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${data?.token}`},
         }

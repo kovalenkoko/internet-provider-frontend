@@ -29,7 +29,7 @@ const UserList = () => {
         const buttonsId =  event.currentTarget.id
 
         const requestOptions = {
-            method: 'PUT',
+            method: 'PATCH',
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${dataFromStorage.token}`},
         }
@@ -41,11 +41,11 @@ const UserList = () => {
             })
     }
 
-    const onUnBlockHandler = (event) => {
+    const onUnblockHandler = (event) => {
         const buttonsId =  event.currentTarget.id
 
         const requestOptions = {
-            method: 'PUT',
+            method: 'PATCH',
             mode: 'cors',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer_${dataFromStorage.token}`},
         }
@@ -91,7 +91,7 @@ const UserList = () => {
                                     </div>
                                     <div className={styles.user_list_btns}>
                                         <button className={styles.user_list_btn} id={item.id} onClick={onBlockHandler}>Block</button>
-                                        <button className={styles.user_list_btn} id={item.id} onClick={onUnBlockHandler}>Unblock</button>
+                                        <button className={styles.user_list_btn} id={item.id} onClick={onUnblockHandler}>Unblock</button>
                                         <button className={styles.user_list_btn} id={item.id} onClick={onDeleteHandler}>Delete</button>
                                     </div>
                                 </div>
